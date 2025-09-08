@@ -63,9 +63,6 @@ export function Footer() {
               <a href="#" className="block text-background/80 hover:text-background smooth-hover" data-testid="link-footer-size-guide">
                 Size Guide
               </a>
-              <a href="#" className="block text-background/80 hover:text-background smooth-hover" data-testid="link-footer-shipping">
-                Shipping Info
-              </a>
               <a href="#" className="block text-background/80 hover:text-background smooth-hover" data-testid="link-footer-returns">
                 Returns
               </a>
