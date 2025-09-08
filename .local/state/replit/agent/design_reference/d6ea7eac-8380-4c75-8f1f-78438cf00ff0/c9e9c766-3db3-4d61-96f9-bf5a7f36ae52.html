@@ -1,0 +1,973 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Azani - Luxury African Fashion | Custom Tailoring from Nairobi</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                borderRadius: {
+                    lg: "var(--radius)",
+                    md: "calc(var(--radius) - 2px)",
+                    sm: "calc(var(--radius) - 4px)",
+                },
+                colors: {
+                    background: "var(--background)",
+                    foreground: "var(--foreground)",
+                    card: {
+                        DEFAULT: "var(--card)",
+                        foreground: "var(--card-foreground)",
+                    },
+                    primary: {
+                        DEFAULT: "var(--primary)",
+                        foreground: "var(--primary-foreground)",
+                    },
+                    secondary: {
+                        DEFAULT: "var(--secondary)",
+                        foreground: "var(--secondary-foreground)",
+                    },
+                    muted: {
+                        DEFAULT: "var(--muted)",
+                        foreground: "var(--muted-foreground)",
+                    },
+                    accent: {
+                        DEFAULT: "var(--accent)",
+                        foreground: "var(--accent-foreground)",
+                    },
+                    destructive: {
+                        DEFAULT: "var(--destructive)",
+                        foreground: "var(--destructive-foreground)",
+                    },
+                    border: "var(--border)",
+                    input: "var(--input)",
+                    ring: "var(--ring)",
+                },
+                fontFamily: {
+                    serif: ["Playfair Display", "serif"],
+                    sans: ["Inter", "sans-serif"],
+                }
+            },
+        }
+    };
+    </script>
+    <style>
+        :root {
+            --background: hsl(35 20% 97%);
+            --foreground: hsl(25 15% 15%);
+            --card: hsl(0 0% 100%);
+            --card-foreground: hsl(25 15% 15%);
+            --primary: hsl(15 85% 45%);
+            --primary-foreground: hsl(0 0% 98%);
+            --secondary: hsl(35 45% 85%);
+            --secondary-foreground: hsl(25 15% 25%);
+            --muted: hsl(35 25% 92%);
+            --muted-foreground: hsl(25 15% 45%);
+            --accent: hsl(45 95% 65%);
+            --accent-foreground: hsl(25 15% 15%);
+            --destructive: hsl(0 70% 55%);
+            --destructive-foreground: hsl(0 0% 98%);
+            --border: hsl(35 20% 85%);
+            --input: hsl(35 20% 92%);
+            --ring: hsl(15 85% 45%);
+            --radius: 0.75rem;
+        }
+
+        .parallax {
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hover-scale {
+            transition: transform 0.3s ease;
+        }
+
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+
+        .gradient-overlay {
+            background: linear-gradient(135deg, rgba(210, 83, 42, 0.9) 0%, rgba(139, 69, 19, 0.7) 100%);
+        }
+
+        .text-shadow {
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-foreground font-sans">
+    <!-- Navigation -->
+    <nav class="fixed top-0 w-full z-50 bg-background/90 backdrop-blur-md border-b border-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <div class="flex items-center">
+                    <h1 class="text-3xl font-serif font-bold text-primary">Azani</h1>
+                    <span class="ml-2 text-sm text-muted-foreground">Nairobi</span>
+                </div>
+                
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="#home" class="text-foreground hover:text-primary transition-colors">Home</a>
+                    <a href="#custom-orders" class="text-foreground hover:text-primary transition-colors">Custom Orders</a>
+                    <a href="#ready-shop" class="text-foreground hover:text-primary transition-colors">Ready Shop</a>
+                    <a href="#about" class="text-foreground hover:text-primary transition-colors">About</a>
+                    <a href="#contact" class="text-foreground hover:text-primary transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <div class="flex items-center bg-muted rounded-lg p-1">
+                        <button class="px-3 py-1 text-sm bg-primary text-primary-foreground rounded">KES</button>
+                        <button class="px-3 py-1 text-sm text-muted-foreground rounded">USD</button>
+                    </div>
+                    <i class="fas fa-shopping-cart text-xl hover:text-primary cursor-pointer transition-colors"></i>
+                    <button class="md:hidden">
+                        <i class="fas fa-bars text-xl"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center overflow-hidden">
+        <!-- Stunning African fashion model in traditional and modern fusion wear -->
+        <div class="absolute inset-0 bg-cover bg-center parallax" style="background-image: url('https://pixabay.com/get/gb0d2b53048c55312e760c5700e8fbef498df5fa04a82123b3788957500c23720075f908ba22b9c8a0471117532313fd7978ab1298e0e16663759b7550567d007_1280.jpg');">
+        </div>
+        <div class="absolute inset-0 gradient-overlay"></div>
+        
+        <div class="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
+            <h1 class="text-5xl md:text-7xl font-serif font-bold mb-6 text-shadow fade-in">
+                Authentic African <br> Luxury Fashion
+            </h1>
+            <p class="text-xl md:text-2xl mb-8 text-shadow fade-in">
+                Custom-tailored excellence from the heart of Nairobi, crafted with love and delivered worldwide
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
+                <button class="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-all hover-scale">
+                    Start Custom Order
+                </button>
+                <button class="border-2 border-white text-white px-8 py-4 rounded-lg text-lg font-semibold hover:bg-white hover:text-foreground transition-all">
+                    Browse Ready-Made
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Collections -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Featured Collections</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Discover our signature pieces that blend traditional African aesthetics with contemporary fashion
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Collection 1: Ankara Suits -->
+                <div class="group cursor-pointer fade-in">
+                    <!-- Professional African man in contemporary ankara suit -->
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" 
+                             alt="Contemporary Ankara suit" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-accent text-accent-foreground px-3 py-1 rounded-full text-sm font-semibold">Custom & Ready</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold mb-2">Ankara Suits</h3>
+                    <p class="text-muted-foreground mb-4">Contemporary suits featuring vibrant African prints</p>
+                    <p class="font-semibold text-primary">From KES 8,500</p>
+                </div>
+
+                <!-- Collection 2: Kitenges -->
+                <div class="group cursor-pointer fade-in">
+                    <!-- Beautiful African woman wearing colorful kitenge dress -->
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" 
+                             alt="Traditional kitenge dress" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-primary text-primary-foreground px-3 py-1 rounded-full text-sm font-semibold">Custom Made</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold mb-2">Kitenges</h3>
+                    <p class="text-muted-foreground mb-4">Traditional dresses with modern silhouettes</p>
+                    <p class="font-semibold text-primary">From KES 4,200</p>
+                </div>
+
+                <!-- Collection 3: Corporate Wear -->
+                <div class="group cursor-pointer fade-in">
+                    <!-- Professional African woman in elegant business attire with African print accents -->
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" 
+                             alt="African print corporate wear" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all duration-300"></div>
+                        <div class="absolute bottom-4 left-4 text-white">
+                            <span class="bg-secondary text-secondary-foreground px-3 py-1 rounded-full text-sm font-semibold">Ready Made</span>
+                        </div>
+                    </div>
+                    <h3 class="text-2xl font-serif font-semibold mb-2">Corporate Wear</h3>
+                    <p class="text-muted-foreground mb-4">Professional attire with African print accents</p>
+                    <p class="font-semibold text-primary">From KES 6,800</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom vs Ready Made Section -->
+    <section class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Choose Your Perfect Fit</h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Whether you want something uniquely yours or need something beautiful right away, we have you covered
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <!-- Custom Orders -->
+                <div class="bg-card rounded-2xl p-8 shadow-lg hover-scale fade-in">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-scissors text-3xl text-primary mr-4"></i>
+                        <h3 class="text-3xl font-serif font-bold">Custom Tailoring</h3>
+                    </div>
+                    <p class="text-muted-foreground mb-6 text-lg">
+                        Experience the luxury of having garments crafted specifically for your measurements, style preferences, and fabric choices.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span>Personal measurements consultation</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span>Choice of premium African fabrics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span>Style customization options</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-primary mr-3"></i>
+                            <span>2-4 weeks production time</span>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-primary text-primary-foreground py-4 rounded-lg font-semibold text-lg hover:bg-primary/90 transition-colors">
+                        Start Custom Order
+                    </button>
+                </div>
+
+                <!-- Ready Made -->
+                <div class="bg-card rounded-2xl p-8 shadow-lg hover-scale fade-in">
+                    <div class="flex items-center mb-6">
+                        <i class="fas fa-shipping-fast text-3xl text-accent mr-4"></i>
+                        <h3 class="text-3xl font-serif font-bold">Ready-Made</h3>
+                    </div>
+                    <p class="text-muted-foreground mb-6 text-lg">
+                        Beautiful pre-made pieces available in standard sizes, ready to ship immediately for your convenience.
+                    </p>
+                    
+                    <div class="space-y-4 mb-8">
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Immediate availability</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Standard sizing (XS-3XL)</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Quality African prints & fabrics</span>
+                        </div>
+                        <div class="flex items-center">
+                            <i class="fas fa-check text-accent mr-3"></i>
+                            <span>Same-day shipping available</span>
+                        </div>
+                    </div>
+
+                    <button class="w-full bg-accent text-accent-foreground py-4 rounded-lg font-semibold text-lg hover:bg-accent/90 transition-colors">
+                        Browse Ready-Made
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Story Section -->
+    <section id="about" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+                <div class="fade-in">
+                    <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">
+                        Crafted in the Heart of Nairobi
+                    </h2>
+                    <p class="text-lg text-muted-foreground mb-6">
+                        Azani was born from a passion for preserving and celebrating African textile traditions while creating contemporary fashion that speaks to the modern world. Our atelier in Nairobi combines generations of tailoring expertise with innovative design.
+                    </p>
+                    <p class="text-lg text-muted-foreground mb-8">
+                        Every piece tells a story - from the vibrant kente cloth sourced from local artisans to the intricate beadwork that adorns our evening wear. We believe fashion should honor heritage while embracing the future.
+                    </p>
+                    
+                    <div class="grid grid-cols-3 gap-8 mb-8">
+                        <div class="text-center">
+                            <div class="text-3xl font-serif font-bold text-primary mb-2">500+</div>
+                            <div class="text-sm text-muted-foreground">Custom Pieces Created</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-serif font-bold text-primary mb-2">50+</div>
+                            <div class="text-sm text-muted-foreground">Countries Served</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-3xl font-serif font-bold text-primary mb-2">15+</div>
+                            <div class="text-sm text-muted-foreground">Local Artisans Supported</div>
+                        </div>
+                    </div>
+
+                    <button class="bg-primary text-primary-foreground px-8 py-4 rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+                        Learn Our Story
+                    </button>
+                </div>
+
+                <div class="fade-in">
+                    <!-- African tailor working in traditional workshop with colorful fabrics -->
+                    <div class="relative rounded-2xl overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=1000" 
+                             alt="Nairobi tailoring workshop" 
+                             class="w-full h-96 object-cover">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+                        <div class="absolute bottom-6 left-6 text-white">
+                            <p class="text-lg font-semibold">Our Nairobi Atelier</p>
+                            <p class="text-sm opacity-90">Where tradition meets innovation</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Custom Order Process -->
+    <section id="custom-orders" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Custom Order Process</h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Experience our seamless custom tailoring process, designed to create your perfect garment from consultation to delivery
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center fade-in">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">1</div>
+                    <h3 class="text-xl font-serif font-semibold mb-3">Consultation</h3>
+                    <p class="text-muted-foreground">Discuss your vision, style preferences, and occasion requirements with our expert tailors</p>
+                </div>
+
+                <div class="text-center fade-in">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">2</div>
+                    <h3 class="text-xl font-serif font-semibold mb-3">Measurements</h3>
+                    <p class="text-muted-foreground">Provide detailed measurements using our comprehensive guide or visit our Nairobi location</p>
+                </div>
+
+                <div class="text-center fade-in">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">3</div>
+                    <h3 class="text-xl font-serif font-semibold mb-3">Fabric Selection</h3>
+                    <p class="text-muted-foreground">Choose from our curated collection of premium African fabrics and trims</p>
+                </div>
+
+                <div class="text-center fade-in">
+                    <div class="bg-primary text-primary-foreground w-16 h-16 rounded-full flex items-center justify-center text-2xl font-bold mx-auto mb-4">4</div>
+                    <h3 class="text-xl font-serif font-semibold mb-3">Crafting & Delivery</h3>
+                    <p class="text-muted-foreground">Our master tailors create your piece with care, ready for worldwide delivery</p>
+                </div>
+            </div>
+
+            <!-- Custom Order Form -->
+            <div class="mt-16 bg-card rounded-2xl p-8 shadow-lg fade-in">
+                <h3 class="text-2xl font-serif font-bold mb-6 text-center">Start Your Custom Order</h3>
+                
+                <form class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-sm font-semibold text-foreground mb-2">Full Name</label>
+                        <input type="text" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Enter your full name">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-foreground mb-2">Email Address</label>
+                        <input type="email" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="your@email.com">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-foreground mb-2">Phone Number</label>
+                        <input type="tel" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+254 700 000 000">
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-foreground mb-2">Garment Type</label>
+                        <select class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option>Select garment type</option>
+                            <option>Ankara Suit</option>
+                            <option>Kitenge Dress</option>
+                            <option>Traditional Shirt</option>
+                            <option>Evening Gown</option>
+                            <option>Corporate Wear</option>
+                            <option>Other (specify in notes)</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold text-foreground mb-2">Measurements (in cm)</label>
+                        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                            <input type="number" placeholder="Chest/Bust" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" placeholder="Waist" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" placeholder="Hip" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" placeholder="Length" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" placeholder="Shoulder" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" placeholder="Sleeve" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" placeholder="Inseam" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <input type="number" placeholder="Neck" class="px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-foreground mb-2">Preferred Fabric</label>
+                        <select class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option>Select fabric preference</option>
+                            <option>Ankara Cotton</option>
+                            <option>Kente Silk</option>
+                            <option>Kitenge Cotton</option>
+                            <option>Linen Blend</option>
+                            <option>Premium Ankara</option>
+                            <option>I'll choose later</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-semibold text-foreground mb-2">Budget Range (KES)</label>
+                        <select class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                            <option>Select budget range</option>
+                            <option>KES 3,000 - 6,000</option>
+                            <option>KES 6,000 - 10,000</option>
+                            <option>KES 10,000 - 15,000</option>
+                            <option>KES 15,000+</option>
+                        </select>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <label class="block text-sm font-semibold text-foreground mb-2">Special Requests & Notes</label>
+                        <textarea rows="4" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Describe any special styling requests, occasion details, or additional notes..."></textarea>
+                    </div>
+
+                    <div class="md:col-span-2">
+                        <button type="submit" class="w-full bg-primary text-primary-foreground py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors">
+                            Submit Custom Order Request
+                        </button>
+                        <p class="text-sm text-muted-foreground text-center mt-3">
+                            We'll contact you within 24 hours to discuss your order and provide a detailed quote
+                        </p>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Ready Shop Preview -->
+    <section id="ready-shop" class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Ready-Made Collection</h2>
+                <p class="text-lg text-muted-foreground max-w-3xl mx-auto">
+                    Beautiful pieces available in standard sizes, ready to ship immediately
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Product 1 -->
+                <div class="group cursor-pointer fade-in">
+                    <!-- African print blazer on model -->
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800" 
+                             alt="African print blazer" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-accent text-accent-foreground px-2 py-1 rounded text-sm font-semibold">New</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button class="w-full bg-white/90 text-foreground py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity font-semibold">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold mb-1">Ankara Print Blazer</h3>
+                    <p class="text-sm text-muted-foreground mb-2">Sizes: XS - 3XL</p>
+                    <p class="font-bold text-primary">KES 7,200</p>
+                </div>
+
+                <!-- Product 2 -->
+                <div class="group cursor-pointer fade-in">
+                    <!-- Colorful African print dress -->
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1515372039744-b8f02a3ae446?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800" 
+                             alt="Kitenge midi dress" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button class="w-full bg-white/90 text-foreground py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity font-semibold">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold mb-1">Kitenge Midi Dress</h3>
+                    <p class="text-sm text-muted-foreground mb-2">Sizes: XS - 3XL</p>
+                    <p class="font-bold text-primary">KES 4,800</p>
+                </div>
+
+                <!-- Product 3 -->
+                <div class="group cursor-pointer fade-in">
+                    <!-- Traditional African men's shirt -->
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800" 
+                             alt="Traditional print shirt" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute top-4 right-4">
+                            <span class="bg-destructive text-destructive-foreground px-2 py-1 rounded text-sm font-semibold">Sale</span>
+                        </div>
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button class="w-full bg-white/90 text-foreground py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity font-semibold">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold mb-1">Traditional Print Shirt</h3>
+                    <p class="text-sm text-muted-foreground mb-2">Sizes: S - 3XL</p>
+                    <div class="flex items-center space-x-2">
+                        <p class="font-bold text-primary">KES 3,200</p>
+                        <p class="text-sm text-muted-foreground line-through">KES 4,000</p>
+                    </div>
+                </div>
+
+                <!-- Product 4 -->
+                <div class="group cursor-pointer fade-in">
+                    <!-- Elegant African evening wear -->
+                    <div class="relative overflow-hidden rounded-xl mb-4">
+                        <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=800" 
+                             alt="Elegant evening gown" 
+                             class="w-full h-80 object-cover group-hover:scale-110 transition-transform duration-500">
+                        <div class="absolute bottom-4 left-4 right-4">
+                            <button class="w-full bg-white/90 text-foreground py-2 rounded opacity-0 group-hover:opacity-100 transition-opacity font-semibold">
+                                Quick View
+                            </button>
+                        </div>
+                    </div>
+                    <h3 class="font-semibold mb-1">Evening Gown</h3>
+                    <p class="text-sm text-muted-foreground mb-2">Sizes: XS - XL</p>
+                    <p class="font-bold text-primary">KES 12,500</p>
+                </div>
+            </div>
+
+            <div class="text-center mt-12 fade-in">
+                <button class="bg-primary text-primary-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors">
+                    View Full Collection
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">What Our Clients Say</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Stories from our global community of fashion lovers
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-card rounded-xl p-8 shadow-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "The custom suit I ordered exceeded all expectations. The attention to detail and quality of the Ankara fabric was outstanding. Perfect fit!"
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-semibold mr-4">
+                            JK
+                        </div>
+                        <div>
+                            <p class="font-semibold">James Kimani</p>
+                            <p class="text-sm text-muted-foreground">London, UK</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card rounded-xl p-8 shadow-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "I ordered three kitenges for my wedding and they were absolutely beautiful. The craftsmanship is exceptional and delivery was prompt."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-semibold mr-4">
+                            AM
+                        </div>
+                        <div>
+                            <p class="font-semibold">Amara Mitchell</p>
+                            <p class="text-sm text-muted-foreground">Toronto, Canada</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-card rounded-xl p-8 shadow-lg fade-in">
+                    <div class="flex items-center mb-4">
+                        <div class="flex text-accent">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                    <p class="text-muted-foreground mb-6 italic">
+                        "Professional service from start to finish. The team guided me through the entire process and the final product was exactly what I envisioned."
+                    </p>
+                    <div class="flex items-center">
+                        <div class="w-12 h-12 bg-primary rounded-full flex items-center justify-center text-primary-foreground font-semibold mr-4">
+                            RO
+                        </div>
+                        <div>
+                            <p class="font-semibold">Rachel Ochieng</p>
+                            <p class="text-sm text-muted-foreground">Nairobi, Kenya</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Gallery -->
+    <section class="py-20 bg-background">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">#AzaniStyle</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Follow us on Instagram to see our latest creations and how our clients style their Azani pieces
+                </p>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+                <!-- Instagram Post 1 -->
+                <div class="aspect-square overflow-hidden rounded-lg group cursor-pointer fade-in">
+                    <!-- Customer wearing custom Azani outfit -->
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                         alt="Customer in Azani outfit" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Instagram Post 2 -->
+                <div class="aspect-square overflow-hidden rounded-lg group cursor-pointer fade-in">
+                    <!-- Behind the scenes tailoring -->
+                    <img src="https://images.unsplash.com/photo-1558769132-cb1aea458c5e?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                         alt="Tailoring process" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Instagram Post 3 -->
+                <div class="aspect-square overflow-hidden rounded-lg group cursor-pointer fade-in">
+                    <!-- African fabric close-up -->
+                    <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                         alt="African print fabric detail" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Instagram Post 4 -->
+                <div class="aspect-square overflow-hidden rounded-lg group cursor-pointer fade-in">
+                    <!-- Customer testimonial photo -->
+                    <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                         alt="Happy customer" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Instagram Post 5 -->
+                <div class="aspect-square overflow-hidden rounded-lg group cursor-pointer fade-in">
+                    <!-- Nairobi workshop -->
+                    <img src="https://images.unsplash.com/photo-1558655146-d09347e92766?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                         alt="Azani workshop" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+
+                <!-- Instagram Post 6 -->
+                <div class="aspect-square overflow-hidden rounded-lg group cursor-pointer fade-in">
+                    <!-- Fashion photoshoot -->
+                    <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&h=400" 
+                         alt="Fashion photoshoot" 
+                         class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300">
+                </div>
+            </div>
+
+            <div class="text-center mt-12 fade-in">
+                <button class="bg-accent text-accent-foreground px-8 py-4 rounded-lg text-lg font-semibold hover:bg-accent/90 transition-colors">
+                    <i class="fab fa-instagram mr-2"></i>
+                    Follow @AzaniNairobi
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-muted">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-16 fade-in">
+                <h2 class="text-4xl md:text-5xl font-serif font-bold text-foreground mb-6">Get in Touch</h2>
+                <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+                    Ready to create something beautiful? We'd love to hear from you
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16">
+                <!-- Contact Information -->
+                <div class="fade-in">
+                    <h3 class="text-2xl font-serif font-bold mb-8">Visit Our Nairobi Atelier</h3>
+                    
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-xl text-primary mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Our Location</p>
+                                <p class="text-muted-foreground">Westlands Shopping Center<br>Waiyaki Way, Nairobi<br>Kenya</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-phone text-xl text-primary mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Phone</p>
+                                <p class="text-muted-foreground">+254 700 123 456</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-envelope text-xl text-primary mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Email</p>
+                                <p class="text-muted-foreground">hello@azanifashion.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <i class="fas fa-clock text-xl text-primary mr-4 mt-1"></i>
+                            <div>
+                                <p class="font-semibold">Operating Hours</p>
+                                <p class="text-muted-foreground">Monday - Saturday: 9AM - 6PM<br>Sunday: 12PM - 4PM</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-12">
+                        <h4 class="text-xl font-semibold mb-4">Follow Us</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fab fa-facebook"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fab fa-whatsapp"></i>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="bg-card rounded-2xl p-8 shadow-lg fade-in">
+                    <h3 class="text-2xl font-serif font-bold mb-6">Send us a Message</h3>
+                    
+                    <form class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Name</label>
+                            <input type="text" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Your full name">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Email</label>
+                            <input type="email" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="your@email.com">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Phone</label>
+                            <input type="tel" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="+254 700 000 000">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Inquiry Type</label>
+                            <select class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent">
+                                <option>Select inquiry type</option>
+                                <option>Custom Order</option>
+                                <option>Ready-Made Purchase</option>
+                                <option>General Question</option>
+                                <option>Wholesale Inquiry</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-semibold text-foreground mb-2">Message</label>
+                            <textarea rows="5" class="w-full px-4 py-3 border border-border rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent" placeholder="Tell us about your project, questions, or how we can help you..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-primary text-primary-foreground py-4 rounded-lg text-lg font-semibold hover:bg-primary/90 transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-foreground text-background py-16">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="md:col-span-2">
+                    <h3 class="text-3xl font-serif font-bold mb-4">Azani</h3>
+                    <p class="text-muted-foreground mb-6 max-w-md">
+                        Crafting authentic African fashion with contemporary elegance. From our atelier in Nairobi to wardrobes worldwide.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fab fa-facebook"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fab fa-whatsapp"></i>
+                        </a>
+                        <a href="#" class="w-10 h-10 bg-primary text-primary-foreground rounded-full flex items-center justify-center hover:bg-primary/90 transition-colors">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-muted-foreground hover:text-background transition-colors">Home</a></li>
+                        <li><a href="#custom-orders" class="text-muted-foreground hover:text-background transition-colors">Custom Orders</a></li>
+                        <li><a href="#ready-shop" class="text-muted-foreground hover:text-background transition-colors">Ready Shop</a></li>
+                        <li><a href="#about" class="text-muted-foreground hover:text-background transition-colors">About Us</a></li>
+                        <li><a href="#contact" class="text-muted-foreground hover:text-background transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Customer Care</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="text-muted-foreground hover:text-background transition-colors">Size Guide</a></li>
+                        <li><a href="#" class="text-muted-foreground hover:text-background transition-colors">Shipping Info</a></li>
+                        <li><a href="#" class="text-muted-foreground hover:text-background transition-colors">Returns</a></li>
+                        <li><a href="#" class="text-muted-foreground hover:text-background transition-colors">FAQ</a></li>
+                        <li><a href="#" class="text-muted-foreground hover:text-background transition-colors">Care Instructions</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-muted-foreground text-sm">
+                    © 2024 Azani Fashion. All rights reserved.
+                </p>
+                <div class="flex items-center space-x-6 mt-4 md:mt-0">
+                    <a href="#" class="text-muted-foreground hover:text-background text-sm transition-colors">Privacy Policy</a>
+                    <a href="#" class="text-muted-foreground hover:text-background text-sm transition-colors">Terms of Service</a>
+                    <a href="#" class="text-muted-foreground hover:text-background text-sm transition-colors">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // TODO: Implement business logic, API calls, or state management
+        
+        // Fade in animation on scroll
+        (function() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in').forEach(el => {
+                observer.observe(el);
+            });
+
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Currency toggle functionality
+            const kesBtn = document.querySelector('button:contains("KES")');
+            const usdBtn = document.querySelector('button:contains("USD")');
+            
+            // TODO: Implement currency conversion logic
+            
+        })();
+    </script>
+</body>
+</html>
